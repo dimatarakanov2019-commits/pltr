@@ -60,7 +60,7 @@ async def check_id(message: Message):
         )
 
 # Показ прайс-листа
-@dp.message(F.text == "📋 Прайс / Примеры")
+@dp.message(F.text == "📋 Прайс")
 async def show_price(message: Message):
     price_text = (
         "💰 **Наш прайс-лист:**\n"
