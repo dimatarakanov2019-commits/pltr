@@ -11,7 +11,7 @@ from aiogram.filters import Command
 # ВНИМАТЕЛЬНО ЗАПОЛНИТЕ ЭТИ ДАННЫЕ:
 # Токен должен быть строго в кавычках. ID — просто число БЕЗ кавычек.
 
-BOT_TOKEN = "8814618059:AAGZwILHnodzx4KEg2mjyEJD4WBC6BexSYI"  # Пример: "8814618059:AAGiF1lmuKem0Upo..."
+BOT_TOKEN = "8814618059:AAFdqJsLTQQS21liDpxa62kyQogj7-KZdzw"  # Пример: "8814618059:AAGiF1lmuKem0Upo..."
 ADMIN_ID = 5602074020         # Сюда вставьте ваш цифровой ID из @userinfobot
 # =====================================================================
 
