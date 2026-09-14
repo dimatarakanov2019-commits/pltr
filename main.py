@@ -11,12 +11,12 @@ from aiogram.filters import Command
 # ВНИМАТЕЛЬНО ЗАПОЛНИТЕ ЭТИ ДАННЫЕ:
 # Токен должен быть строго в кавычках. ID — просто число БЕЗ кавычек.
 
-BOT_TOKEN = "8814618059:AAGiF1lmuKemOUpoQhpDWaliWcFOY7cFwng"  # Пример: "8814618059:AAGiF1lmuKem0Upo..."
+BOT_TOKEN = "8814618059:AAGZwILHnodzx4KEg2mjyEJD4WBC6BexSYI"  # Пример: "8814618059:AAGiF1lmuKem0Upo..."
 ADMIN_ID = 5602074020         # Сюда вставьте ваш цифровой ID из @userinfobot
 # =====================================================================
 
 # Проверка перед запуском: не забыл ли пользователь поменять ID
-if BOT_TOKEN == "8814618059:AAGiF1lmuKemOUpoQhpDWaliWcFOY7cFwng" or ADMIN_ID == 5602074020:
+if BOT_TOKEN == "8814618059:AAGZwILHnodzx4KEg2mjyEJD4WBC6BexSYI" or ADMIN_ID == 5602074020:
     print("\n❌ ОШИБКА: Вы забыли заменить 'ВАШ_ТОКЕН_БОТА' или 'ADMIN_ID' на свои реальные данные!")
     print("Откройте файл main.py и вставьте туда ваш токен и ID.\n")
     sys.exit(1)
