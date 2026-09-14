@@ -58,10 +58,9 @@ async def cmd_start(message: Message):
 async def show_price(message: Message):
     price_text = (
         "💰 **Наш прайс-лист:**\n"
-        "— Аватарка/Скетч: от 500 руб.\n"
-        "— Полноценный арт (полный рост): от 1500 руб.\n"
-        "— Разработка персонажа: от 2500 руб.\n\n"
-        "Портфолио можно посмотреть здесь: [Ссылка на ваш канал/сайт]"
+        "— Иташи: от 1000 руб.\n"
+        "— Тимки под ключ: от 1500 руб.\n"
+        "— Флеймы: 500 руб.\n\n"
     )
     await message.answer(price_text, parse_mode="Markdown")
 
@@ -69,8 +68,8 @@ async def show_price(message: Message):
 async def start_order(message: Message, state: FSMContext):
     type_kb = ReplyKeyboardMarkup(
         keyboard=[
-            [KeyboardButton(text="Аватарка"), KeyboardButton(text="Полноценный арт")],
-            [KeyboardButton(text="Стикеры"), KeyboardButton(text="Другое")]
+            [KeyboardButton(text="Иташи"), KeyboardButton(text="Тимка")],
+            [KeyboardButton(text="Флейм"), KeyboardButton(text="Другое")]
         ],
         resize_keyboard=True
     )
@@ -81,7 +80,7 @@ async def start_order(message: Message, state: FSMContext):
 async def process_type(message: Message, state: FSMContext):
     await state.update_data(work_type=message.text)
     await message.answer(
-        "Отлично! Теперь подробно опишите ваше ТЗ (техзадание):\n"
+        "Отлично! Теперь подробно опишите ваше ТЗ :\n"
         "— Что должно быть изображено?\n"
         "— В каких цветах и каком стиле?\n"
         "— Персонажи, фон, важные детали?",
