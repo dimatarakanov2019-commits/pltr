@@ -31,8 +31,7 @@ def get_main_keyboard():
     return ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(text="🎨 Заказать рисовку")],
-            [KeyboardButton(text="📋 Прайс / Примеры")],
-            [KeyboardButton(text="🔍 Проверить мой ID")]  # Кнопка для самодиагностики
+            [KeyboardButton(text="📋 Прайс")],
         ],
         resize_keyboard=True
     )
@@ -41,7 +40,6 @@ def get_main_keyboard():
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
     await message.answer(
-        f"🤖 БОТ ОБНОВЛЕН И РАБОТАЕТ ГАРАНТИРОВАННО ДЛЯ ВСЕХ!\n\n"
         f"Привет, {message.from_user.full_name}! 👋\n"
         f"Я бот для заказа рисовок на серверах DriftParadise!.\n"
         f"Нажмите на кнопку ниже, чтобы оформить заказ.",
@@ -91,9 +89,9 @@ async def process_type(message: Message, state: FSMContext):
     await state.update_data(work_type=message.text)
     await message.answer(
         "Отлично! Теперь подробно опишите ваше ТЗ:\n"
-        "— Что должно быть изображено?\n"
-        "— В каких цветах и каком стиле?\n"
-        "— Персонажи, фон, важные детали?",
+        "— Ваш никнейм и логин на проекте\n"
+        "— Пожелания в работе\n"
+        "— Авто на котором будет рисовка",
         reply_markup=ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Отмена")]], resize_keyboard=True)
     )
     await state.set_state(OrderForm.waiting_for_details)
@@ -109,7 +107,7 @@ async def process_details(message: Message, state: FSMContext):
     await state.update_data(details=message.text)
     await message.answer(
         "Прикрепите примеры или развертки, если они есть.\n"
-        "Если референсов нет, просто напишите текст 'Нет референсов'."
+        "Если их нет, просто напишите 'Нет референсов'."
     )
     await state.set_state(OrderForm.waiting_for_reference)
 
